@@ -20,7 +20,7 @@ import { DemoFunction } from "../model/domain/DemoFunction";
 import {
     DemoAndExpression,
     DemoComparisonExpression, DemoDivideExpression, DemoMultiplyExpression,
-    DemoNumberLiteralExpression, DemoOrExpression, DemoPlaceholderExpression, DemoPlusExpression,
+    DemoNumberLiteralExpression, DemoOrExpression, DemoPlaceholderExpression, DemoPlusExpression, DemoSubExpression,
     DemoStringLiteralExpression
 } from "../model/index";
 // tslint:disable-next-line:no-unused-import
@@ -52,6 +52,8 @@ export class DemoProjection implements PiProjection {
             return this.createNumberLiteralBox(exp);
         } else if (exp instanceof DemoPlusExpression) {
             return this.createPlusBox(exp);
+        } else if (exp instanceof DemoSubExpression) {
+            return this.createSubBox(exp);
         } else if (exp instanceof DemoMultiplyExpression) {
             return this.createMultiplyBox(exp);
         } else if (exp instanceof DemoAndExpression) {
@@ -346,6 +348,11 @@ export class DemoProjection implements PiProjection {
 
     private createPlusBox(exp: DemoPlusExpression): Box {
         LOGGER.info(this, "createPlusBox: ");
+        return this.createBinaryBox(this, exp);
+    }
+
+    private createSubBox(exp: DemoSubExpression): Box {
+        LOGGER.info(this, "createSubBox: ");
         return this.createBinaryBox(this, exp);
     }
 

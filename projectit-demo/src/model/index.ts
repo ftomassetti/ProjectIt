@@ -15,6 +15,7 @@ export * from "./expressions/DemoNumberLiteralExpression";
 export * from "./expressions/DemoOrExpression";
 export * from "./expressions/DemoPlaceholderExpression";
 export * from "./expressions/DemoPlusExpression";
+export * from "./expressions/DemoSubExpression";
 export * from "./expressions/DemoPowerExpression";
 export * from "./expressions/DemoStringLiteralExpression";
 export * from "./expressions/DemoThisExpression";

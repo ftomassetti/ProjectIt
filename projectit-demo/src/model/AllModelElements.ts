@@ -8,7 +8,7 @@ import {
     DemoIfExpression, DemoMember,
     DemoModel,
     DemoModelElement, DemoMultiplyExpression,
-    DemoNumberLiteralExpression, DemoOrExpression, DemoPlaceholderExpression, DemoPlusExpression, DemoPowerExpression,
+    DemoNumberLiteralExpression, DemoOrExpression, DemoPlaceholderExpression, DemoPlusExpression, DemoSubExpression, DemoPowerExpression,
     DemoStringLiteralExpression, DemoThisExpression,
     DemoVariableRefExpression
 } from ".";
@@ -38,6 +38,7 @@ export var constructors: { [name: string]: Function } = {
     "DemoBinaryExpressionPlaceholder": DemoBinaryExpressionPlaceholder,
     "DemoDivideExpression": DemoDivideExpression,
     "DemoPlusExpression": DemoPlusExpression,
+    "DemoSubExpression": DemoSubExpression,
     "DemoMultiplyExpression": DemoMultiplyExpression,
     "DemoPowerExpression": DemoPowerExpression,
     "DemoEqualExpression": DemoEqualExpression,

@@ -34,6 +34,7 @@ import {
     DemoNumberLiteralExpression,
     DemoOrExpression,
     DemoPlusExpression,
+    DemoSubExpression,
     DemoStringLiteralExpression
 } from "../model";
 import { loadComponent } from "./LoadComponent";
@@ -79,6 +80,14 @@ const BINARY_EXPRESSION_CREATORS: PiBinaryExpressionCreator[] = [
         activeInBoxRoles: [LEFT_MOST, RIGHT_MOST, EXPRESSION_PLACEHOLDER, BEFORE_BINARY_OPERATOR, AFTER_BINARY_OPERATOR],
         expressionBuilder: (box: Box, trigger: PiTriggerType, editor: PiEditor) => {
             return new DemoPlusExpression();
+        },
+        boxRoleToSelect: EXPRESSION_PLACEHOLDER
+    },
+    {
+        trigger: "-",
+        activeInBoxRoles: [LEFT_MOST, RIGHT_MOST, EXPRESSION_PLACEHOLDER, BEFORE_BINARY_OPERATOR, AFTER_BINARY_OPERATOR],
+        expressionBuilder: (box: Box, trigger: PiTriggerType, editor: PiEditor) => {
+            return new DemoSubExpression();
         },
         boxRoleToSelect: EXPRESSION_PLACEHOLDER
     },
